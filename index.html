@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kebijakan Privasi Fulush / Fulush Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f8fa;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #10b981;
+      --border: #e5e7eb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0f14;
+        --card: #121820;
+        --text: #f3f4f6;
+        --muted: #9ca3af;
+        --accent: #34d399;
+        --border: #1f2937;
+      }
+    }
+    body {
+      margin: 0;
+      padding: 24px 16px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+    }
+    h1 { margin-top: 0; font-size: 1.7rem; }
+    h2 { margin-top: 1.8rem; border-bottom: 1px solid var(--border); padding-bottom: 6px; font-size: 1.25rem; }
+    h3 { margin-top: 1.2rem; font-size: 1.05rem; }
+    .meta { color: var(--muted); font-size: 0.92rem; margin-bottom: 1.5rem; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+    code { background: color-mix(in srgb, var(--muted) 15%, transparent); padding: 1px 5px; border-radius: 6px; font-size: 0.9em; }
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+<main>
+  <span class="badge">com.fulush.app</span>
+  <h1>Kebijakan Privasi Fulush / Privacy Policy</h1>
+  <p class="meta">Berlaku efektif / Effective date: 16 November 2026</p>
+
+  <h2>Bahasa Indonesia</h2>
+  <h3>1. Prinsip Utama (Lokal-Utama)</h3>
+  <p>Fulush dirancang agar seluruh catatan keuangan Anda tetap berada di perangkat Anda sendiri secara bawaan. Fulush tidak menampilkan iklan, tidak memakai SDK pelacakan/analitik pihak ketiga, dan tidak menjual data pengguna.</p>
+
+  <h3>2. Data yang Diproses &amp; Tujuannya</h3>
+  <ul>
+    <li><strong>Catatan Keuangan Lokal:</strong> Transaksi, draf, anggaran, saldo dompet, aturan rutin, target tabungan, kategori kustom, dan preferensi disimpan secara lokal di database SQLite perangkat.</li>
+    <li><strong>Akses Notifikasi (Opsional):</strong> Jika diaktifkan, Fulush hanya membaca notifikasi dari aplikasi dompet digital/bank yang Anda pilih di <em>Aplikasi dipantau</em> untuk mendeteksi nominal, toko/penerima, dan jenis transaksi. Teks asli notifikasi dan log notifikasi <strong>hanya disimpan di perangkat</strong> dan <strong>tidak pernah diunggah</strong>.</li>
+    <li><strong>Pindai Struk / OCR (Opsional):</strong> Foto dari kamera, galeri, atau menu Bagikan diproses di perangkat melalui Google Play Services ML Kit Text Recognition. File sementara dihapus segera setelah dipindai.</li>
+    <li><strong>Bantuan Gemini (Opsional, mati bawaan):</strong> Jika dinyalakan, hanya kalimat yang Anda ketik di <em>Catat dari kalimat</em>, daftar nama kategori, dan tanggal hari ini yang dikirim ke API Google Gemini (lewat proxy <code>fulush-gemini.fulush-app.workers.dev</code> atau kunci API Anda sendiri). Proxy tidak menyimpan isi kalimat Anda.</li>
+    <li><strong>Sinkronisasi Online (Opsional, Login Google):</strong> Jika masuk dengan Google, transaksi terkonfirmasi, penanda hapus, anggaran, saldo acuan, transaksi rutin, target tabungan, mata uang tampilan, serta ikon aplikasi dompet terpasang disinkronkan ke Firebase Firestore di bawah jalur akun Anda (<code>users/{uid}/...</code>).</li>
+    <li><strong>Kurs Mata Uang:</strong> Mengambil kurs publik dari <code>open.er-api.com</code> tanpa mengirim identitas atau data keuangan Anda.</li>
+  </ul>
+
+  <h3 id="account-deletion">3. Penghapusan Akun &amp; Data Pengguna</h3>
+  <p>Anda dapat mengekspor cadangan (JSON/CSV) maupun menghapus seluruh data Anda kapan saja langsung di dalam aplikasi Fulush:</p>
+  <ul>
+    <li><strong>Hapus akun &amp; data cloud:</strong> Buka <em>Pengaturan → Sinkron online → Hapus akun &amp; data cloud</em> untuk menghapus permanen seluruh data Firestore (termasuk <code>wallet_icons</code>) dan akun Firebase Auth Anda.</li>
+    <li><strong>Hapus data perangkat:</strong> Buka <em>Pengaturan → Cadangan → Hapus semua data di perangkat</em> untuk menghapus seluruh data lokal SQLite, log notifikasi, preferensi, dan kunci Gemini tersimpan.</li>
+  </ul>
+
+  <h2>English</h2>
+  <h3>1. Core Principle (Local-First)</h3>
+  <p>Fulush stores your financial records locally on your device by default. Fulush has no ads, no third-party analytics or crash-reporting SDKs, and never sells user data.</p>
+
+  <h3>2. Data Processed &amp; Purpose</h3>
+  <ul>
+    <li><strong>Local Financial Data:</strong> Transactions, drafts, budgets, wallet balances, recurring rules, savings goals, custom categories, and app preferences stay in local SQLite storage.</li>
+    <li><strong>Notification Access (Optional):</strong> When enabled, Fulush reads notifications solely from wallet/bank apps you select under <em>Watched apps</em> to detect amounts, merchants, and transaction types. Raw notification texts and logs <strong>remain strictly on-device</strong> and are <strong>never uploaded</strong>.</li>
+    <li><strong>Receipt Scanning / OCR (Optional):</strong> Images from camera, gallery, or Share are processed on-device via Google Play Services ML Kit Text Recognition. Temporary files are deleted right after scanning.</li>
+    <li><strong>Gemini Assist (Optional, off by default):</strong> Only the sentence you type in <em>Add from a sentence</em>, category names, and today's date are sent to Google Gemini (via <code>fulush-gemini.fulush-app.workers.dev</code> or your own API key). The proxy server does not log sentence contents.</li>
+    <li><strong>Online Sync (Optional, Google Sign-In):</strong> Confirmed transactions, tombstones, budgets, balance anchors, recurring rules, savings goals, display currency, and installed wallet icons sync strictly under your own Firebase path (<code>users/{uid}/...</code>).</li>
+    <li><strong>Exchange Rates:</strong> Fetches public conversion rates from <code>open.er-api.com</code> without sending personal identifiers or financial data.</li>
+  </ul>
+
+  <h3>3. Account &amp; Data Deletion</h3>
+  <p>You can export JSON backups or CSV anytime, permanently erase all Firestore cloud copies and delete your Firebase Auth account via <em>Settings → Online sync → Delete account &amp; cloud data</em>, or wipe all local device storage via <em>Settings → Backup → Erase all device data</em>.</p>
+</main>
+</body>
+</html>
